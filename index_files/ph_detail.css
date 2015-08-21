@@ -1,0 +1,18 @@
+/* Effective stylesheet produced by snapshot save */
+#wikicontent h1, #wikicontent h2, #wikicontent h3, #wikipreview h1, #wikipreview h2, #wikipreview h3 { background: transparent none repeat scroll 0% 0%; border: 0px none; padding-left: 0px; max-width: 700px; }
+#wikicontent ul, #wikipreview ul, #wikicontent ol, #wikipreview ol { padding-left: 25px; max-width: 62em; }
+#wikicontent li, #wikipreview li { margin-bottom: 0.3em; }
+#wikicontent p, #wikipreview p { line-height: 1.25em; max-width: 64em; }
+a.section_anchor::before { content: "¶"; }
+a.section_anchor { display: none; text-decoration: none; margin-left: 0.7em; font-weight: lighter; font-size: 85%; }
+h1:hover a.section_anchor, h2:hover a.section_anchor, h3:hover a.section_anchor, h4:hover a.section_anchor, h5:hover a.section_anchor, h6:hover a.section_anchor { display: inline; color: rgb(187, 187, 187); }
+h1 a.section_anchor:hover, h2 a.section_anchor:hover, h3 a.section_anchor:hover, h4 a.section_anchor:hover, h5 a.section_anchor:hover, h6 a.section_anchor:hover { color: rgb(51, 51, 204); }
+#wikicontent code, tt, #wikicontent pre, #wikipreview code, tt, #wikipreview pre { font-family: Monaco,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Lucida Console",monospace; font-size: 93%; max-width: 66em; }
+.pscolumnl { min-width: 15em; border-right: 2px solid rgb(233, 233, 233); }
+.pscontent { width: 100%; vertical-align: top; }
+.psicon { padding-left: 5px; padding-top: 5px; }
+.psdescription { padding: 0px 10px ! important; width: 100%; }
+.pslist { list-style-type: none; padding-left: 34px; margin: 0px; }
+.phead { background-color: rgb(229, 237, 249); font-weight: bold; height: 15px; margin: 5px 5px 4px; padding: 3px 6px; white-space: nowrap; }
+.psmeta { margin: 0px 5px 0px 0px; padding: 0px; }
+.psgap { height: 1em; }

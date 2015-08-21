@@ -1,0 +1,429 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="wiki_files/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="https://code.google.com/p/ltalloc/wiki/Main">
+ 
+ <script async="" src="wiki_files/cb=gapi.loaded_0.js"></script><script gapi_processed="true" src="wiki_files/plusone.js" async="" type="text/javascript"></script><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src="wiki_files/ga.js" async="" type="text/javascript"></script>
+ 
+ 
+ <title>Main - 
+ ltalloc -
+ 
+ 
+ LightweighT Almost Lock-Less Oriented for C++ programs memory allocator - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="wiki_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="wiki_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="https://code.google.com/feeds/p/ltalloc/hgchanges/basic?path=/ru/Main.wiki&amp;repo=wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/3642002406634653640/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#maincol { padding-top: 0px; padding-bottom: 0px; }
+--></style>
+</head>
+<body class="t6">
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ 
+ <a href="#" id="multilogin-dropdown" onclick=""><u><b>alextretyak2@gmail.com</b></u> <small>▼</small></a>
+ 
+ 
+ | <a href="https://code.google.com/u/103991733007983256404/" id="projects-dropdown" onclick=""><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://code.google.com/u/103991733007983256404/" onclick="" title="Profile, Updates, and Settings"><u>Profile</u></a>
+ | <a href="https://www.google.com/accounts/Logout?continue=https%3A%2F%2Fcode.google.com%2Fp%2Fltalloc%2Fwiki%2FMain%3Fwl%3Dru" onclick=""><u>Sign out</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+ <div style="font-weight:bold; color:#a03; padding:5px; margin-top:10px; text-align:center; background:#ffeac0;">
+ Google Code will be turning read-only on August 25th. See <a href="https://code.google.com/p/support/wiki/ReadOnlyTransition">this post</a> for more information.<br>
+ 
+ </div>
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" itemscope="" itemtype="http://schema.org/CreativeWork" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="https://code.google.com/p/ltalloc">
+ <a href="https://code.google.com/p/ltalloc/">
+ 
+ <img src="wiki_files/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="https://code.google.com/p/ltalloc/"><span itemprop="name">ltalloc</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="https://code.google.com/p/ltalloc/"><span itemprop="description">LightweighT Almost Lock-Less Oriented for C++ programs memory allocator</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="https://code.google.com/hosting/search">
+ <input size="30" name="q" type="text">
+ 
+ <input name="projectsearch" value="Search projects" type="submit">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="https://code.google.com/p/ltalloc/" class="tab ">Project Home</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/ltalloc/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/ltalloc/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/ltalloc/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/ltalloc/admin" class="tab inactive">Administer</a>
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/export-to-github/export?project=ltalloc">
+ <button>Export to GitHub</button>
+ 
+ </a>
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+
+ 
+
+<table class="st" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ 
+ 
+ <span class="inIssueEntry"> 
+ <a class="buttonify" href="https://code.google.com/p/ltalloc/w/edit">New page</a>
+ </span>  
+ 
+ 
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="https://code.google.com/p/ltalloc/w/list" method="GET" style="display:inline">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1"> All wiki pages</option>
+ <option value="3"> Featured pages</option>
+ <option value="2" selected="selected"> Current pages</option>
+ 
+ 
+ <option value="5"> My starred pages</option>
+ 
+ <option value="4"> Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input size="38" id="searchq" name="q" autocomplete="off" type="text"></span>
+ 
+ 
+ 
+ <input value="Search" type="submit">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="bevel-right" align="right" valign="top"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<div id="maincol">
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#commentform { border-top: 3px solid rgb(195, 217, 255); }
+--></style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <img id="star_img" src="wiki_files/star_off.gif" style="cursor:pointer" onclick="" height="15" width="15">
+ 
+ <span style="font-size:120%;font-weight:bold">Main</span>
+  
+ <div> 
+ 
+ 
+ 
+ <br>
+ 
+ 
+ <a href="wiki.htm" title="en">en</a>
+ , 
+ 
+ 
+ 
+ <b>ru</b>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Tue Aug 27 01:25:17 2013">
+ Aug 27, 2013</span>
+ 
+ by 
+
+ <a class="userlink" href="https://code.google.com/u/103991733007983256404/">alextretyak2</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h2><a name="О_проекте"></a>О проекте<a href="#%D0%9E_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B5" class="section_anchor"></a></h2><p>Простой (но очень эффективный) многопоточный аллокатор памяти, основанный на списках освобожденных блоков.<br> Лучше всего подходит для приложений, выделяющих много мелких (&lt;256 байт) блоков памяти (что обычно происходит при активном использовании stl-контейнеров), и из множества одновременно работающих параллельных потоков. </p><h2><a name="Основные_характеристики"></a>Основные характеристики<a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5_%D1%85%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8" class="section_anchor"></a></h2><ul><li>O(1) стоимость операций выделения/освобождения блоков памяти (для блоков размером &lt;56KB) </li><li>Низкая фрагментация </li><li>Практически без накладных расходов для маленьких блоков (т.к. в блоках не хранится никакого заголовка или указателя, а используется один общий заголовок размером 64 байт для всех блоков внутри 64KБ чанка) </li><li>Высокая производительность и очень хорошая масштабируемость (практически нет блокировок, в среднем не более одной спин-блокировки на 256 операций выделения/освобождения памяти, даже в случае, когда все блоки, выделенные в одном потоке, освобождаются в другом) </li></ul><h1><a name="Введение"></a>Введение<a href="#%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" class="section_anchor"></a></h1><p>Практически каждый С++ программист слышал про возможность замены аллокаторов в stl-контейнерах, но практически никогда ей не пользовался. :)<br> И я также, как и многие, считаю, что данная возможность является практически непригодной в реальных крупных проектах, особенно когда при использовании сторонних С++ библиотек вдруг обнаруживается, что контейнеры с различными аллокаторами просто не совместимы друг с другом<!-- (особенно актуально для класса строк)-->.<br> В конце концов, для чего вообще может понадобиться переопределять стандартный аллокатор памяти в контейнерах?<br> Я вообще не думаю, что контроль за выделением памяти должен быть на уровне контейнера - скорее на уровне размера блоков, которые выделяет этот контейнер (напр. все узлы map&lt;int,int&gt; выделять из единого пула). Или на уровне пары (размер, поток). Таким образом, основное преимущество специальных аллокаторов получается в том случае, когда они выделяют блоки одинакового размера (это касается аллокаторов на основе связанного списка освобожденных блоков, т.к. основанные на пулах специальные аллокаторы (когда освобождение делается сразу всех выделенных блоков за одну операцию) использовать сложнее в общем случае, и не всегда удобно). В противном случае, память, выделенная специальным аллокатором, не будет совместно использоваться (напр. когда используются различные контейнеры, но размер выделяемых блоков одинаковый), что приведёт к избыточному расходованию памяти, а также при использовании специализированных аллокаторов могут быть какие-то нюансы, связанные с многопоточностью. В конечном счете получается, что специализированные аллокаторы создают больше проблем, чем решают.<br> В итоге, я подумал, что если бы выбор соответствующего пула от размера блока можно было бы перенести на время компиляции, тогда единый на всё приложение глобальный аллокатор памяти смог бы полностью избавить от необходимости в специальных аллокаторах! Идея выглядит практически нереальной, но всё-таки я решил попробовать реализовать её. </p><h1><a name="Основные_принципы_проектирования"></a>Основные принципы проектирования<a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" class="section_anchor"></a></h1><p><strong>1. Встраивание функций и расчеты во время компиляции.</strong> </p><p>Код функций выделения памяти должен быть настолько мал, чтобы компилятор мог встроить его в место вызова (и чтобы это не приводило к значительному росту общего объема исполняемого файла). Дополнительно, это позволит часть вычислений произвести во время компиляции, если размер выделяемого блока известен заранее, как часто и бывает в С++ коде. А именно на основе размера выделяемого блока определяется к какой группе объектов он относится. Чтобы это было возможно, расчёты на основе размера должны быть достаточно просты и опираться только на встроенные функции компилятора (никаких asm-вставок или вызовов внешних функций), а также не должно быть обращений к рассчитанным данным в памяти, а только к константам. В конце концов, исходный код необходимо компилировать с включенной оптимизацией компоновщика (LTO - опция /GL для MSVC, -flto для GCC/Clang и -ipo для ICC), чтобы все обращения к оператору new встроились в место вызова. В качестве примера, ниже приводится результат компиляции выражения "new std::array&lt;int, 10&gt;": </p><table border="1" cellpadding="4" cellspacing="0"><thead align="center"><tr><td>Source Code</td><td>MSVC 2012 compiler 32-bit asm output</td><td>GCC 4.8.1 64-bit asm output</td></tr></thead><tbody><tr><td> <p></p><pre class="prettyprint"><span class="pln">NOINLINE </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">test_function</span><span class="pun">()</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">array</span><span class="pun">&lt;</span><span class="kwd">int</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">&gt;;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="kwd">operator</span><span class="pln"> </span><span class="kwd">new</span><span class="pun">(</span><span class="pln">size_t size</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ltalloc</span><span class="str">&lt;true&gt;</span><span class="pun">(</span><span class="pln">size</span><span class="pun">);</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="kwd">operator</span><span class="pln"> </span><span class="kwd">new</span><span class="pun">(</span><span class="pln">size_t size</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">nothrow_t</span><span class="pun">&amp;)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ltalloc</span><span class="str">&lt;false&gt;</span><span class="pun">(</span><span class="pln">size</span><span class="pun">);</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">template</span><span class="pln"> </span><span class="pun">&lt;</span><span class="kwd">bool</span><span class="pln"> throw_</span><span class="pun">&gt;</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ltalloc</span><span class="pun">(</span><span class="pln">size_t size</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> sizeClass </span><span class="pun">=</span><span class="pln"> get_size_class</span><span class="pun">(</span><span class="pln">size</span><span class="pun">);</span><span class="pln"> </span><span class="com">//рассчитывается на этапе компиляции</span><span class="pln"><br>    </span><span class="typ">ThreadCache</span><span class="pln"> </span><span class="pun">*</span><span class="pln">tc </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">threadCache</span><span class="pun">[</span><span class="pln">sizeClass</span><span class="pun">];</span><span class="pln"><br>    </span><span class="typ">FreeBlock</span><span class="pln"> </span><span class="pun">*</span><span class="pln">fb </span><span class="pun">=</span><span class="pln"> tc</span><span class="pun">-&gt;</span><span class="pln">freeList</span><span class="pun">;</span><span class="pln"><br>    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">likely</span><span class="pun">(</span><span class="pln">fb</span><span class="pun">))</span><span class="pln"><br>    </span><span class="pun">{</span><span class="pln"><br>        tc</span><span class="pun">-&gt;</span><span class="pln">freeList </span><span class="pun">=</span><span class="pln"> fb</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pun">;</span><span class="pln"><br>        tc</span><span class="pun">-&gt;</span><span class="pln">counter</span><span class="pun">++;</span><span class="pln"><br>        </span><span class="kwd">return</span><span class="pln"> fb</span><span class="pun">;</span><span class="pln"><br>    </span><span class="pun">}</span><span class="pln"><br>    </span><span class="kwd">else</span><span class="pln"><br>        </span><span class="kwd">return</span><span class="pln"> fetch_from_central_cache</span><span class="str">&lt;throw_&gt;</span><span class="pun">(</span><span class="pln">size</span><span class="pun">,</span><span class="pln"> tc</span><span class="pun">,</span><span class="pln"> sizeClass</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span></pre><p></p></td><td> <p></p><pre class="prettyprint"><span class="pln">mov         eax</span><span class="pun">,</span><span class="pln">dword ptr fs</span><span class="pun">:[</span><span class="lit">0000002Ch</span><span class="pun">]</span><span class="pln"><br>mov         edx</span><span class="pun">,</span><span class="pln">dword ptr </span><span class="pun">[</span><span class="pln">eax</span><span class="pun">]</span><span class="pln"><br>add         edx</span><span class="pun">,</span><span class="lit">128h</span><span class="pln"> </span><span class="pun">;</span><span class="lit">296</span><span class="pun">=</span><span class="pln">sizeClass</span><span class="pun">*</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="pln">tc</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span><span class="pln"><br>mov         eax</span><span class="pun">,</span><span class="pln">dword ptr </span><span class="pun">[</span><span class="pln">edx</span><span class="pun">]</span><span class="pln"><br>test        eax</span><span class="pun">,</span><span class="pln">eax<br>je          L1 </span><span class="pun">;</span><span class="pln"> </span><span class="pun">вероятность</span><span class="pln"> </span><span class="pun">перехода</span><span class="pln"> </span><span class="pun">около</span><span class="pln"> </span><span class="lit">1</span><span class="pun">%</span><span class="pln"><br>mov         ecx</span><span class="pun">,</span><span class="pln">dword ptr </span><span class="pun">[</span><span class="pln">eax</span><span class="pun">]</span><span class="pln"><br>inc         dword ptr </span><span class="pun">[</span><span class="pln">edx</span><span class="pun">+</span><span class="lit">8</span><span class="pun">]</span><span class="pln"><br>mov         dword ptr </span><span class="pun">[</span><span class="pln">edx</span><span class="pun">],</span><span class="pln">ecx<br>ret</span></pre><p><font color="gray"></font></p><pre><font color="gray"> L1:
+ push        18h ; =24 (size class)
+ mov         ecx,28h ; =40 (bytes size)
+ call        fetch_from_central_cache&lt;1&gt; (0851380h)
+ add         esp,4
+ ret
+ </font></pre></td><td> <p></p><pre class="prettyprint"><span class="pln">mov    rdx</span><span class="pun">,</span><span class="lit">0xffffffffffffe7a0</span><span class="pln"><br>mov    rax</span><span class="pun">,</span><span class="pln">QWORD PTR fs</span><span class="pun">:[</span><span class="pln">rdx</span><span class="pun">+</span><span class="lit">0x240</span><span class="pun">]</span><span class="pln"><br>test   rax</span><span class="pun">,</span><span class="pln">rax<br>je     L1 </span><span class="pun">;</span><span class="pln"> </span><span class="pun">вероятность</span><span class="pln"> </span><span class="pun">перехода</span><span class="pln"> </span><span class="pun">~</span><span class="lit">1</span><span class="pun">%</span><span class="pln"><br>mov    rcx</span><span class="pun">,</span><span class="pln">QWORD PTR </span><span class="pun">[</span><span class="pln">rax</span><span class="pun">]</span><span class="pln"><br>add    DWORD PTR fs</span><span class="pun">:[</span><span class="pln">rdx</span><span class="pun">+</span><span class="lit">0x250</span><span class="pun">],</span><span class="lit">0x1</span><span class="pln"><br>mov    QWORD PTR fs</span><span class="pun">:[</span><span class="pln">rdx</span><span class="pun">+</span><span class="lit">0x240</span><span class="pun">],</span><span class="pln">rcx<br>ret</span></pre><p><font color="gray"></font></p><pre><font color="gray"> L1:    
+ add    rdx,QWORD PTR fs:0x0
+ mov    edi,0x28 ; =40 (bytes size)
+ lea    rsi,[rdx+0x240]
+ mov    edx,0x18 ; =24 (size class)
+ jmp    &lt;_Z24fetch_from_central_cache...&gt;
+ </font></pre></td></tr> <tr><td colspan="3">Как видно, данное выражение выполняется всего за 9 ассемблерных инструкций, а в случае GCC - даже за 7 (если не считать достаточно редкие случаи опустошения локального списка свободных блоков - один раз на 256 аллокаций для блоков до 256 байт). <p></p><p>А вот ещё один пример - выделение большого количества блоков памяти в цикле для создания односвязного списка массивов: </p></td></tr><tr><td> <p></p><pre class="prettyprint"><span class="pln">NOINLINE </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">create_list_of_arrays</span><span class="pun">()</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>    </span><span class="kwd">struct</span><span class="pln"> node<br>    </span><span class="pun">{</span><span class="pln"><br>        node </span><span class="pun">*</span><span class="kwd">next</span><span class="pun">;</span><span class="pln"><br>        std</span><span class="pun">::</span><span class="pln">array</span><span class="pun">&lt;</span><span class="kwd">int</span><span class="pun">,</span><span class="pln"> </span><span class="lit">9</span><span class="pun">&gt;</span><span class="pln"> arr</span><span class="pun">;</span><span class="pln"><br>    </span><span class="pun">}</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p </span><span class="pun">=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln"><br><br>    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="lit">1000</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"><br>    </span><span class="pun">{</span><span class="pln"><br>        node </span><span class="pun">*</span><span class="pln">n </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> node</span><span class="pun">;</span><span class="pln"><br>        n</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br>        p </span><span class="pun">=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"><br>    </span><span class="pun">}</span><span class="pln"><br><br>    </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span></pre><p></p></td><td> <font color="gray"><pre> mov         eax,dword ptr fs:[0000002Ch] 
+ push        ebx
+ push        esi
+ mov         esi,dword ptr [eax] 
+ push        edi
+ xor         edi,edi
+ add         esi,128h
+ mov         ebx,3E8h    ; =1000       </pre></font> <p></p><pre class="prettyprint"><span class="pln">L2</span><span class="pun">:</span><span class="pln"><br>mov         eax</span><span class="pun">,</span><span class="pln">dword ptr </span><span class="pun">[</span><span class="pln">esi</span><span class="pun">]</span><span class="pln"><br>test        eax</span><span class="pun">,</span><span class="pln">eax<br>je          L1 </span><span class="pun">;</span><span class="pln"> </span><span class="pun">вероятность</span><span class="pln"> </span><span class="pun">~</span><span class="lit">1</span><span class="pun">%</span><span class="pln"><br>mov         ecx</span><span class="pun">,</span><span class="pln">dword ptr </span><span class="pun">[</span><span class="pln">eax</span><span class="pun">]</span><span class="pln"><br>inc         dword ptr </span><span class="pun">[</span><span class="pln">esi</span><span class="pun">+</span><span class="lit">8</span><span class="pun">]</span><span class="pln"><br>mov         dword ptr </span><span class="pun">[</span><span class="pln">esi</span><span class="pun">],</span><span class="pln">ecx<br>dec         ebx                  </span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++</span><span class="pln"><br>mov         dword ptr </span><span class="pun">[</span><span class="pln">eax</span><span class="pun">],</span><span class="pln">edi  </span><span class="pun">;</span><span class="pln"> n</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br>mov         edi</span><span class="pun">,</span><span class="pln">eax              </span><span class="pun">;</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"><br>jne         L2                   </span><span class="pun">;</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">&lt;</span><span class="lit">1000</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">goto</span><span class="pln"> L2</span></pre><p><font color="gray"></font></p><pre><font color="gray"> pop         edi
+ pop         esi
+ pop         ebx
+ ret
+ L1:
+ ...</font></pre></td><td> <font color="gray"><pre> ...    </pre></font> <p></p><pre class="prettyprint"><span class="pln">L2</span><span class="pun">:</span><span class="pln"><br>mov    r12</span><span class="pun">,</span><span class="pln">rax                      </span><span class="pun">;</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> n</span><span class="pun">;</span><span class="pln"><br>mov    rax</span><span class="pun">,</span><span class="pln">QWORD PTR fs</span><span class="pun">:[</span><span class="pln">rbx</span><span class="pun">+</span><span class="lit">0x258</span><span class="pun">]</span><span class="pln"><br>test   rax</span><span class="pun">,</span><span class="pln">rax<br>je     L1 </span><span class="pun">;</span><span class="pln"> </span><span class="pun">вероятность</span><span class="pln"> </span><span class="pun">~</span><span class="lit">1</span><span class="pun">%</span><span class="pln"><br>mov    rdx</span><span class="pun">,</span><span class="pln">QWORD PTR </span><span class="pun">[</span><span class="pln">rax</span><span class="pun">]</span><span class="pln"><br>add    DWORD PTR fs</span><span class="pun">:[</span><span class="pln">rbx</span><span class="pun">+</span><span class="lit">0x268</span><span class="pun">],</span><span class="lit">0x1</span><span class="pln"><br>mov    QWORD PTR fs</span><span class="pun">:[</span><span class="pln">rbx</span><span class="pun">+</span><span class="lit">0x258</span><span class="pun">],</span><span class="pln">rdx<br>L3</span><span class="pun">:</span><span class="pln"><br></span><span class="kwd">sub</span><span class="pln">    ebp</span><span class="pun">,</span><span class="lit">0x1</span><span class="pln">                      </span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++</span><span class="pln"><br>mov    QWORD PTR </span><span class="pun">[</span><span class="pln">rax</span><span class="pun">],</span><span class="pln">r12          </span><span class="pun">;</span><span class="pln"> n</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">;</span><span class="pln"><br>jne    L2                           </span><span class="pun">;</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">&lt;</span><span class="lit">1000</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">goto</span><span class="pln"> L2</span></pre><p><font color="gray"></font></p><pre><font color="gray"> add    rsp,0x8
+ pop    rbx
+ pop    rbp
+ pop    r12 
+ pop    r13 
+ ret    
+ L1:
+ mov    edx,0x19
+ mov    rsi,r13 
+ mov    edi,0x30
+ call   &lt;_Z24fetch_from_central_cache...&gt;
+ jmp    L3   </font></pre></td></tr></tbody></table> <p></p><p>В этом случае компилятор соптимизировал выражение "new node;" в цикле до 6 ассемблерных инструкций!<br> Я думаю, что по производительности результат компиляции этого кода вполне может быть сопоставим с хорошим специализированным аллокатором, основанным на пулах.<br> (Но, хотя встраивание и даёт некоторые преимущества, оно не является абсолютно необходимым, и даже обычный не встроенный вызов функции ltalloc сработает очень быстро<!--, лишь на ~30% медленее встроенной функции согласно результату теста - см. ниже-->.) </p><p><strong>2. Многопоточность и масштабируемость.</strong> </p><p>Для обеспечения высокой эффективности при работе множества параллельных потоков используется подход, аналогичный используемому в <a href="http://gperftools.googlecode.com/svn/trunk/doc/tcmalloc.html" rel="nofollow">TCMalloc</a> (я не использовал код TCMalloc, а только лишь основную идею).<br> Т.е., есть отдельный кэш на каждый поток, и все операции выделения памяти (кроме больших блоков &gt;56Кб) в первую очередь пытаются получить свободный блок из этого кэша, организованного в виде простого односвязного списка освобожденных блоков на каждый диапазон размеров блоков (size class).<br> Если список оказался пустым, тогда из центрального списка (общего для всех потоков) выбирается сразу группа блоков (256 или меньше), помещается в локальный список потока, и один блок из этого списка возвращается приложению. Когда блок памяти освобождается, он, наоборот, добавляется сначала в список локальных блоков текущего потока, и в случае достижения определённого кол-ва блоков в этом списке (256 или менее, зависит от размера блока), весь список перемещается в центральный кэш для возможности последующего использования другими потоками.<br> Этот простой механизм может обеспечить достаточную масштабируемость (т.е. с достаточно небольшим числом состязаний) теоретически даже на 128-ядерной SMP-системе, если операции выделения/освобождения памяти будут разделены хотя бы 100 тактами другой полезной работы (примерно столько требуется на одну операцию перемещения группы блоков в центральный кэш или обратно). И такой подход особенно эффективен для паттерна "поставщик-потребитель", когда вся память, выделяемая в одном потоке, затем освобождается в другом. </p><p><strong>3. Компактность размещения блоков.</strong> </p><p>В то время как многие аллокаторы хранят дополнительный указатель в начале каждого выделенного блока (т.о., напр. выделение 16 байт (или даже 13) фактически потребует 32 байта из-за требования выравнивания на 16 байт), в ltalloc хранится лишь небольшой (64 байт) общий заголовок на чанк (по умолчанию 64Кб), а все выделенные блоки хранятся непрерывно внутри чанка без каких-либо метаданных между ними, что гораздо более эффективно для маленьких блоков.<br> Тогда, если нет указателя в начале блока, должен быть другой способ для нахождения метаданных от данного блока. В некоторых аллокаторах для решения этой задачи используется граница sbrk, но минусы такого подхода в том, что приходится эмулировать sbrk на некоторых системах, а также в том, что память, выделенную таким способом, невозможно эффективно отдать системе после освобождения части блоков. Поэтому, я решил использовать другой подход: все большие блоки памяти (получаемые системным вызовом напрямую) всегда выровнены на размер чанка, т.о. все блоки внутри любого чанка будут не выровнены в отличие от больших блоков, и принадлежность любого блока чанку можно определить простым if (uintptr_t(p)&amp;(CHUNK_SIZE-1)), а сам указатель на заголовок чанка легко получить через выражение (uintptr_t)p &amp; ~(CHUNK_SIZE-1). (Подобный подход используется в jemalloc.)<br> Наконец, для разбивки размеров блоков на классы (size-classes) используется простой и быстрый алгоритм с округлением размера до "субстепени" двойки (2<sup>n</sup>, 1.25<tt>*</tt>2<sup>n</sup>, 1.5<tt>*</tt>2<sup>n</sup> и 1.75<tt>*</tt>2<sup>n</sup> по умолчанию, но гранулярность можно настроить, в т.ч. свести все размеры только к степеням двойки) - получается 51 класс размеров блоков до 56Кб, и накладные расходы по объему памяти (внутренняя фрагментация) не более 25%, в среднем 12%.<br> В качестве приятного бесплатного бонуса такой подход даёт "идеальное выравнивание" всех возвращаемых адресов блоков памяти (подробнее <a href="#5.__%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83_%D0%BD%D0%B5%D1%82_%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8_%D0%B0%D0%BD%D0%B0">см. ниже</a>). </p><h1><a name="Вопросы"></a>Вопросы<a href="#%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B" class="section_anchor"></a></h1><h3><a name="1._Аллокатор_ltalloc_быстрее_других_алл"></a>1. Аллокатор ltalloc быстрее других аллокаторов памяти общего назначения?<a href="#1._%D0%90%D0%BB%D0%BB%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D1%80_ltalloc_%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%B5%D0%B5_%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D1%85_%D0%B0%D0%BB%D0%BB" class="section_anchor"></a></h3><p>Да, конечно! Зачем же ещё было писать свой аллокатор памяти. :)<br> Ну а если серьёзно, то вот сравнительная таблица производительности, основанная на <a href="http://code.google.com/p/ltalloc/source/browse/test.cpp?repo=wiki" rel="nofollow">простом тесте</a>, выделяющем и освобождающем блоки памяти фиксированного размера из параллельно работающих потоков.<br> (Результат каждого теста указан в количестве миллионов пар операций (выделение+освобождение блока памяти размером 128 байт) в секунду на отдельный поток, т.е. для получения общего кол-ва операций необходимо умножить результат на кол-во потоков.) </p><blockquote></blockquote><table border="1" cellpadding="4" cellspacing="0"><tbody align="center"> <tr><td>Sys. Configuration</td>  <td></td><td colspan="3">i3 M350 (2.3 GHz)<br><br>Windows 7</td>                            <td></td><td colspan="3">Core2 Quad Q8300<br><br>Windows XP SP3</td>                         <td></td><td colspan="4"><span title="на самом деле 2600K, но я выключил Turbo Boost в BIOS'е">i7 2600</span> (3.4 GHz)<br><br>Windows 7</td> <td></td><td colspan="5">2x Xeon E5620 (2.4 GHz, 4 cores x 2)<br><br>Windows Server 2008 <tt>R2</tt></td>                         <td></td><td colspan="5">2x Xeon E5620 (2.4 GHz, 4 cores x 2)<br><br>Debian GNU/Linux 6.0.6 (squeeze)</td>                                        </tr> <tr><td>Allocator \ Threads</td> <td></td><td>1</td><td>2</td><td>4 (HT)</td>                                             <td></td><td>1</td><td>2</td><td>4</td>                                                   <td></td><td>1</td><td>2</td><td>4</td><td>8 (HT)</td>                                                                <td></td><td>1</td><td>2</td><td>4</td><td>8</td><td>16 (HT)</td>                                                                              <td></td><td>1</td><td>2</td><td>4</td><td>8</td><td>16 (HT)</td>                                                                              </tr> <tr><td align="left">default</td> <td></td><td>10.0<br><br>(<strong>6.97</strong>)</td><td>8.4<br><br>(<strong>8.04</strong>)</td><td>5.3<br><br>(<strong>9.53</strong>)</td>    <td></td><td>8.3<br><br>(<strong>12.61</strong>)</td><td>1.3<br><br>(<strong>79.23</strong>)</td><td>0.4<br><br>(<strong>218.75</strong>)</td>  <td></td><td>16.0<br><br>(<strong>10.31</strong>)</td><td>15.2<br><br>(<strong>10.86</strong>)</td><td>13.3<br><br>(<strong>10.26</strong>)</td><td>8.5<br><br>(<strong>10.73</strong>)</td>  <td></td><td>11.6<br><br>(<strong>9.53</strong>)</td><td>11.2<br><br>(<strong>9.88</strong>)</td><td>10.8<br><br>(<strong>9.70</strong>)</td><td>10.7<br><br>(<strong>6.21</strong>)</td><td>5.8<br><br>(<strong>10.45</strong>)</td>    <td></td><td>14.9<br><br>(<strong>8.49</strong>)</td><td>14.9<br><br>(<strong>8.46</strong>)</td><td>15.3<br><br>(<strong>8.25</strong>)</td><td>4.8<br><br>(<strong>25.48</strong>)</td><td>0.8<br><br>(<strong>79.00</strong>)</td>    </tr> <tr><td align="left"><a href="http://www.nedprod.com/programs/portable/nedmalloc/" rel="nofollow">nedmalloc</a></td> 
+<td></td><td>14.2<br><br>(<strong>4.91</strong>)</td><td>13.1<br><br>(<strong>5.15</strong>)</td><td>7.9<br><br>(<strong>6.39</strong>)</td>   <td></td><td>15.6<br><br>(<strong>6.71</strong>)</td><td>15.6<br><br>(<strong>6.60</strong>)</td><td>14.0<br><br>(<strong>6.25</strong>)</td>   <td></td><td>22.4<br><br>(<strong>7.37</strong>)</td><td>22.3<br><br>(<strong>7.40</strong>)</td><td>19.5<br><br>(<strong>6.99</strong>)</td><td>13.0<br><br>(<strong>7.02</strong>)</td>     <td></td><td>16.7<br><br>(<strong>6.62</strong>)</td><td>16.6<br><br>(<strong>6.67</strong>)</td><td>16.4<br><br>(<strong>6.39</strong>)</td><td>10.7<br><br>(<strong>6.21</strong>)</td><td>8.4<br><br>(<strong>7.21</strong>)</td>     <td></td><td>22.5<br><br>(<strong>5.62</strong>)</td><td>21.3<br><br>(<strong>5.92</strong>)</td><td>21.8<br><br>(<strong>5.79</strong>)</td><td>19.6<br><br>(<strong>6.24</strong>)</td><td>11.3<br><br>(<strong>5.59</strong>)</td>    </tr> <tr><td align="left"><a href="http://www.hoard.org/" rel="nofollow">Hoard</a></td> 
+<td></td><td>32.2<br><br>(<strong>2.16</strong>)</td><td>31.3<br><br>(<strong>2.16</strong>)</td><td>23.8<br><br>(<strong>2.12</strong>)</td>  <td></td><td>44.7<br><br>(<strong>2.34</strong>)</td><td>44.4<br><br>(<strong>2.32</strong>)</td><td>40.3<br><br>(<strong>2.17</strong>)</td>   <td></td><td>77.6<br><br>(<strong>2.13</strong>)</td><td>76.3<br><br>(<strong>2.16</strong>)</td><td>64.0<br><br>(<strong>2.13</strong>)</td><td>43.6<br><br>(<strong>2.09</strong>)</td>     <td></td><td>57.5<br><br>(<strong>1.92</strong>)</td><td>56.2<br><br>(<strong>1.97</strong>)</td><td>54.6<br><br>(<strong>1.92</strong>)</td><td>34.2<br><br>(<strong>1.94</strong>)</td><td>31.9<br><br>(<strong>1.90</strong>)</td>    <td></td><td>31.2<br><br>(<strong>4.05</strong>)</td><td>30.4<br><br>(<strong>4.14</strong>)</td><td>27.4<br><br>(<strong>4.61</strong>)</td><td>25.3<br><br>(<strong>4.83</strong>)</td><td>16.4<br><br>(<strong>3.85</strong>)</td>    </tr> <tr><td align="left"><a href="http://www.canonware.com/jemalloc/" rel="nofollow">jemalloc</a></td> 
+<td></td><td>11.5<br><br>(<strong>6.06</strong>)</td><td>11.0<br><br>(<strong>6.14</strong>)</td><td>7.0<br><br>(<strong>7.21</strong>)</td>   <td></td><td>13.4<br><br>(<strong>7.81</strong>)</td><td>13.3<br><br>(<strong>7.74</strong>)</td><td>5.0<br><br>(<strong>17.50</strong>)</td>   <td></td><td>18.2<br><br>(<strong>9.07</strong>)</td><td>18.1<br><br>(<strong>9.12</strong>)</td><td>10.1<br><br>(<strong>13.50</strong>)</td><td>7.4<br><br>(<strong>12.32</strong>)</td>    <td></td><td>14.1<br><br>(<strong>7.84</strong>)</td><td>14.0<br><br>(<strong>7.91</strong>)</td><td>6.7<br><br>(<strong>15.64</strong>)</td><td>4.4<br><br>(<strong>15.09</strong>)</td><td>2.9<br><br>(<strong>20.90</strong>)</td>    <td></td><td>30.1<br><br>(<strong>4.20</strong>)</td><td>30.0<br><br>(<strong>4.20</strong>)</td><td>30.1<br><br>(<strong>4.20</strong>)</td><td>27.9<br><br>(<strong>4.38</strong>)</td><td>16.2<br><br>(<strong>3.90</strong>)</td>    </tr> <tr><td align="left"><a href="http://gperftools.googlecode.com/svn/trunk/doc/tcmalloc.html" rel="nofollow">TCMalloc</a></td> 
+<td></td><td>15.5<br><br>(<strong>4.50</strong>)</td><td>13.9<br><br>(<strong>4.86</strong>)</td><td>8.9<br><br>(<strong>5.67</strong>)</td>   <td></td><td>17.0<br><br>(<strong>6.16</strong>)</td><td>16.7<br><br>(<strong>6.17</strong>)</td><td>15.4<br><br>(<strong>5.68</strong>)</td>   <td></td><td>34.2<br><br>(<strong>4.82</strong>)</td><td>34.0<br><br>(<strong>4.85</strong>)</td><td>28.2<br><br>(<strong>4.84</strong>)</td><td>18.1<br><br>(<strong>5.04</strong>)</td>     <td></td><td>21.6<br><br>(<strong>5.12</strong>)</td><td>20.7<br><br>(<strong>5.35</strong>)</td><td>20.1<br><br>(<strong>5.21</strong>)</td><td>13.6<br><br>(<strong>4.88</strong>)</td><td>10.2<br><br>(<strong>5.94</strong>)</td>    <td></td><td>36.5<br><br>(<strong>3.47</strong>)</td><td>36.4<br><br>(<strong>3.46</strong>)</td><td>33.5<br><br>(<strong>3.77</strong>)</td><td>31.4<br><br>(<strong>3.89</strong>)</td><td>18.6<br><br>(<strong>3.40</strong>)</td>    </tr> <tr><td align="left">ltalloc (с выкл. LTO)</td> 
+<td></td><td>31.9<br><br>(<strong>2.18</strong>)</td><td>31.0<br><br>(<strong>2.18</strong>)</td><td>20.8<br><br>(<strong>2.43</strong>)</td>  <td></td><td>50.9<br><br>(<strong>2.06</strong>)</td><td>50.9<br><br>(<strong>2.02</strong>)</td><td>44.5<br><br>(<strong>1.97</strong>)</td>   <td></td><td>81.6<br><br>(<strong>2.02</strong>)</td><td>79.7<br><br>(<strong>2.07</strong>)</td><td>67.4<br><br>(<strong>2.02</strong>)</td><td>48.1<br><br>(<strong>1.90</strong>)</td>     <td></td><td>62.2<br><br>(<strong>1.78</strong>)</td><td>62.5<br><br>(<strong>1.77</strong>)</td><td>62.1<br><br>(<strong>1.69</strong>)</td><td>36.3<br><br>(<strong>1.83</strong>)</td><td>31.1<br><br>(<strong>1.95</strong>)</td>    <td></td><td>91.1<br><br>(<strong>1.39</strong>)</td><td>91.0<br><br>(<strong>1.38</strong>)</td><td>90.9<br><br>(<strong>1.39</strong>)</td><td>84.8<br><br>(<strong>1.44</strong>)</td><td>46.8<br><br>(<strong>1.35</strong>)</td>    </tr> <tr><td align="left"><a href="http://locklessinc.com/downloads/" rel="nofollow">lockless</a></td> 
+<td></td><td>43.3<br><br>(<strong>1.61</strong>)</td><td>40.3<br><br>(<strong>1.67</strong>)</td><td>30.2<br><br>(<strong>1.67</strong>)</td>  <td></td><td colspan="3">Нет результатов<br><br>(т.к. требуется Windows Vista)</td>          <td></td><td>88.7<br><br>(<strong>1.86</strong>)</td><td>75.7<br><br>(<strong>2.18</strong>)</td><td>75.4<br><br>(<strong>1.81</strong>)</td><td>50.9<br><br>(<strong>1.79</strong>)</td>     <td></td><td>60.9<br><br>(<strong>1.81</strong>)</td><td>61.1<br><br>(<strong>1.81</strong>)</td><td>60.3<br><br>(<strong>1.74</strong>)</td><td>39.9<br><br>(<strong>1.66</strong>)</td><td>33.5<br><br>(<strong>1.81</strong>)</td>    <td></td><td>114.4<br><br>(<strong>1.11</strong>)</td><td>107.6<br><br>(<strong>1.17</strong>)</td><td>107.5<br><br>(<strong>1.17</strong>)</td><td>102.0<br><br>(<strong>1.20</strong>)</td><td>55.9<br><br>(<strong>1.13</strong>)</td></tr> <tr><td align="left">ltalloc</td> 
+<td></td><td>69.7<br><br>(<strong>1.00</strong>)</td><td>67.5<br><br>(<strong>1.00</strong>)</td><td>50.5<br><br>(<strong>1.00</strong>)</td>  <td></td><td>104.7<br><br>(<strong>1.00</strong>)</td><td>103.0<br><br>(<strong>1.00</strong>)</td><td>87.5<br><br>(<strong>1.00</strong>)</td> <td></td><td>165.0<br><br>(<strong>1.00</strong>)</td><td>165.0<br><br>(<strong>1.00</strong>)</td><td>136.4<br><br>(<strong>1.00</strong>)</td><td>91.2<br><br>(<strong>1.00</strong>)</td>  <td></td><td>110.5<br><br>(<strong>1.00</strong>)</td><td>110.7<br><br>(<strong>1.00</strong>)</td><td>104.8<br><br>(<strong>1.00</strong>)</td><td>66.4<br><br>(<strong>1.00</strong>)</td><td>60.6<br><br>(<strong>1.00</strong>)</td> <td></td><td>126.5<br><br>(<strong>1.00</strong>)</td><td>126.0<br><br>(<strong>1.00</strong>)</td><td>126.3<br><br>(<strong>1.00</strong>)</td><td>122.3<br><br>(<strong>1.00</strong>)</td><td>63.2<br><br>(<strong>1.00</strong>)</td></tr> <tr><td align="left"><a href="http://www.boost.org/doc/libs/release/libs/pool/doc/html/boost/fast_pool_allocator.html" title="boost::fast_pool_allocator с null_mutex" rel="nofollow">fast_pool_allocator</a></td> 
+<td></td><td>116.5<br><br>(<strong>0.60</strong>)</td><td>58.3<br><br>(<strong>1.16</strong>)</td><td>12.5<br><br>(<strong>4.04</strong>)</td> <td></td><td>152.0<br><br>(<strong>0.69</strong>)</td><td>22.5<br><br>(<strong>4.58</strong>)</td><td>5.6<br><br>(<strong>15.63</strong>)</td>  <td></td><td>277.8<br><br>(<strong>0.59</strong>)</td><td>48.7<br><br>(<strong>3.39</strong>)</td><td>25.1<br><br>(<strong>5.43</strong>)</td><td>11.8<br><br>(<strong>7.73</strong>)</td>    <td></td><td>189.8<br><br>(<strong>0.58</strong>)</td><td>62.0<br><br>(<strong>1.79</strong>)</td><td>29.9<br><br>(<strong>3.51</strong>)</td><td>3.9<br><br>(<strong>17.03</strong>)</td><td>2.0<br><br>(<strong>30.30</strong>)</td>   <td></td><td>156.4<br><br>(<strong>0.81</strong>)</td><td>11.5<br><br>(<strong>10.96</strong>)</td><td>3.1<br><br>(<strong>40.74</strong>)</td><td>1.3<br><br>(<strong>94.08</strong>)</td><td>1.3<br><br>(<strong>48.62</strong>)</td>  </tr> 
+</tbody></table> <p></p><p>Результаты 2x Xeon E5620/Debian в виде диаграммы: </p><p><img src="wiki_files/benchmark.png"> </p><p>Хотя этот тест чисто синтетический и, возможно, слишком предвзятый, он позволяет достаточно точно измерить чистую стоимость операций выделения/освобождения блоков памяти, исключая влияние множества других факторов, таких как например промахи кэша (что безусловно важно в реальных приложениях, но не всегда). Тем не менее, даже этот тест может быть достаточно репрезентативным для некоторых приложений и алгоритмов (напр. использующих мало данных, целиком помещающихся в кэше). </p><h3><a name="2._За_счет_чего_ltalloc_так_быстро_работ"></a>2. За счет чего ltalloc так быстро работает?<a href="#2._%D0%97%D0%B0_%D1%81%D1%87%D0%B5%D1%82_%D1%87%D0%B5%D0%B3%D0%BE_ltalloc_%D1%82%D0%B0%D0%BA_%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%BE_%D1%80%D0%B0%D0%B1%D0%BE%D1%82" class="section_anchor"></a></h3><p>Если коротко, то в основе лежит сверх-простой дизайн и хорошо продуманная реализация базовых функций c минимизацией условных переходов для наиболее частых случаев.<br> К примеру, вот так выглядит типичная реализация функции аллокации в других аллокаторах памяти: </p><ol><li>if (size == 0) return NULL (или size = 1) </li><li>if (!initialized) initialize_allocator() </li><li>if (size &lt; some_threshold) (для проверки что блок достаточно маленького размера) </li><li>if (freeList) {result = freeList, freeList = freeList-&gt;next} </li><li>if (result == NULL) throw std::bad_alloc() (в реализации оператора new) </li></ol><p></p><p>Но в случае вызова оператора new, перегруженного через ltalloc, в среднем будет всего лишь <strong>одна</strong> условная инструкция - на основе п.4 (которая к тому же не приведёт к переходу в 99% случаев), в то время как остальные проверки будут делаться только по мере необходимости в редких случаях. <font color="white"> </font></p><h6><font color="white"><a name="rmem"></a>rmem<a href="#rmem" class="section_anchor"></a></font></h6><p> </p><h3><a name="3._Как_часто_аллокатор_возвращает_п�"></a>3. Как часто аллокатор возвращает память системе автоматически?<a href="#3._%D0%9A%D0%B0%D0%BA_%D1%87%D0%B0%D1%81%D1%82%D0%BE_%D0%B0%D0%BB%D0%BB%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D1%82_%D0%BF%EF%BF%BD" class="section_anchor"></a></h3><p>Ну в общем-то, никогда не возвращает (не считая больших блоков, запрашиваемых напрямую у системы).<br> Но всегда есть возможность сделать это вручную вызовом функции ltalloc_squeeze(), который можно делать в любое время (в т.ч. в отдельном потоке), и который практически не оказывает никакого влияния на производительность операций выделения/освобождения памяти в других потоках (кроме, очевидно, необходимости повторного получения памяти у системы при новых аллокациях). Кроме того, эта функция освобождает столько кэшированной аллокатором памяти сколько возможно - не только в "конце выделенной области" (как реализовано в malloc_trim и некоторых других аллокаторах).<br> Я не хотел делать эту процедуру автоматической, т.к. она сильно завязана на паттерн выделения памяти приложением (например., можно представить серверное приложение, которое периодически (раз в минуту напр.) должно обрабатывать какой-то тяжелый запрос, настолько быстро насколько возможно, и после обработки все выделенные блоки освобождаются - и если автоматически возвращать всю эту память системе в этом случае, то может несколько снизиться производительность обработки последующих запросов, т.к. это каждый раз будет требовать выделения памяти у системы). Кроме того, я очень не люблю всякие настраиваемые параметры пороговых значений, т.к. их обычно трудно настроить оптимально для большинства случаев использования, и в каких-то ситуациях производительность непременно будет значительно проседать. К тому же, автоматическое освобождение потребует дополнительных проверок в базовых функциях выделения/освобождения памяти (хотя и не обязательно на каждый вызов, но тем не менее когда-то они должны отрабатывать), и что более важно, такая процедура достаточно затратная, т.е. предпочтительно всё-таки вызывать ltalloc_squeeze асинхронно. В общем, поэтому я решил оставить только ручной вариант запуска процедуры возврата системе памяти от освобожденных блоков. Эту процедуру можно вызывать в наиболее подходящие моменты в зависимости от приложения (например, во время неактивности пользователя, либо сразу после закрытия вложенного окна/вкладки и т.д.).<br> Но если всё-таки хочется, чтобы очистка работала автоматически, то можно просто запустить отдельный поток, который будет периодически вызывать ltalloc_squeeze(0). Вот вариант реализации в одну строку на С++11: </p><pre class="prettyprint"><span class="pln">std</span><span class="pun">::</span><span class="pln">thread</span><span class="pun">([]</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(;;</span><span class="pln">ltalloc_squeeze</span><span class="pun">(</span><span class="lit">0</span><span class="pun">))</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">this_thread</span><span class="pun">::</span><span class="pln">sleep_for</span><span class="pun">(</span><span class="pln">std</span><span class="pun">::</span><span class="pln">chrono</span><span class="pun">::</span><span class="pln">seconds</span><span class="pun">(</span><span class="lit">3</span><span class="pun">));}).</span><span class="pln">detach</span><span class="pun">();</span></pre><h3><a name="4._Почему_аллокатор_не_предоставляе"></a>4. Почему аллокатор не предоставляет никакой статистики по выделенным блокам памяти?<a href="#4._%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83_%D0%B0%D0%BB%D0%BB%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D0%BD%D0%B5_%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5" class="section_anchor"></a></h3><p>Потому, что это дополнительные расходы, и я не вижу большого смысла в подобного рода вещах в таком простом аллокаторе (и он предназначен для максимально высокой производительности выделения памяти, с минимумом проверок).<br> В любом случае, для опционального включения такой статистики должна быть какая-то константа препроцессора, т.о. можно просто взять более подходящую реализацию malloc-а, предоставляющую всю необходимую статистику (а возможно также ещё и отладочные проверки и поиск утечек памяти), и включать её только при необходимости (в отладочных целях) при установленной константе препроцессора, напр. примерно таким образом: </p><pre class="prettyprint"><span class="com">#ifdef</span><span class="pln"> ENABLE_ADDITIONAL_MEMORY_INFO<br></span><span class="com">#include</span><span class="pln"> </span><span class="str">"some_malloc.cxx"</span><span class="pln"><br></span><span class="com">#else</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">"ltalloc.cc"</span><span class="pln"><br></span><span class="com">#endif</span></pre><h3><a name="5.__Почему_нет_отдельной_функции_ана"></a>5.  Почему нет отдельной функции аналога aligned_alloc для выделения выровненных блоков памяти?<a href="#5.__%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83_%D0%BD%D0%B5%D1%82_%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8_%D0%B0%D0%BD%D0%B0" class="section_anchor"></a></h3><p>Просто потому, что она не нужна! :)<br> Дело в том, что одной из особенностей аллокатора является то, что возвращаемые адреса блоков всегда "идеально выравнены" в соответствии с запрашиваемым размером, т.е. выравнивание составляет не менее <tt>pow(2, CountTrailingZeroBits(size))</tt> байт. Напр., 4-хбайтные блоки всегда выровнены на 4 байта, 24-хбайтные - на 8 байт, 1024-хбайтные - на 1024, 1280 - на 256 и т.д.<br> (Учтите, что в C/C++ размер структуры всегда кратен размеру её наибольшего базового элемента, т.е. <tt>sizeof(struct {__m128 a; char s[4];})</tt> = 32, а не 20 (16+4) ! Т.о., для любой возможной структуры S оператор "new S" всегда возвращает указатель, выровненный соответствующим образом.)<br> Т.о., если вам требуется выделить область памяти, выровненную на 4Кб, тогда просто подкорректируйте необходимый размер как (size+4095)&amp;~4095 перед вызовом ltalloc (или new char). (К слову, в функцию aligned_alloc согласно стандарту С11 значение размера нужно передавать уже кратным параметру выравнивания, т.о. ltalloc() можно безопасно вызывать прямо вместо aligned_alloc(), т.е. даже без указания значения выравнивания, т.к. оно не требуется.)<br> Но, если честно, "идеальное выравнение" работает не для любых размеров блоков, а только не превышающих размер чанка (который равен 64Кб по умолчанию, т.е. в общем-то, это ограничение не должно быть проблемой). Адреса блоков большего размера выравнены только на размер чанка, и не более.<br> Вот полный список всех диапазонов размеров блоков и соответствующего им выравнивания: </p><table class="wikitable"><tbody><tr><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Запрашиваемый размер</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Выравнивание</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Запрашиваемый размер</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Выравнивание</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Запрашиваемый размер</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Выравнивание</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Запрашиваемый размер</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> <strong>Выравнивание</strong> </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 1..4 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 81..96 </td><td style="border: 1px solid #ccc; padding: 5px;"> 32 </td><td style="border: 1px solid #ccc; padding: 5px;">              </td><td style="border: 1px solid #ccc; padding: 5px;"> 769..896 </td><td style="border: 1px solid #ccc; padding: 5px;"> 128 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 7169..8192 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8192 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 5..8 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 97..112 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16 </td><td style="border: 1px solid #ccc; padding: 5px;">             </td><td style="border: 1px solid #ccc; padding: 5px;"> 897..1024 </td><td style="border: 1px solid #ccc; padding: 5px;"> 1024 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 8193..10240 </td><td style="border: 1px solid #ccc; padding: 5px;"> 2048 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 9..12 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 113..128 </td><td style="border: 1px solid #ccc; padding: 5px;"> 128 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 1025..1280 </td><td style="border: 1px solid #ccc; padding: 5px;"> 256 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 10241..12288 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4096 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 13..16 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 129..160 </td><td style="border: 1px solid #ccc; padding: 5px;"> 32 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 1281..1536 </td><td style="border: 1px solid #ccc; padding: 5px;"> 512 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 12289..14336 </td><td style="border: 1px solid #ccc; padding: 5px;"> 2048 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 17..20 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4 </td><td style="border: 1px solid #ccc; padding: 5px;">          </td><td style="border: 1px solid #ccc; padding: 5px;"> 161..192 </td><td style="border: 1px solid #ccc; padding: 5px;"> 64 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 1537..1792 </td><td style="border: 1px solid #ccc; padding: 5px;"> 256 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 14337..16384 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16384 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 21..24 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8 </td><td style="border: 1px solid #ccc; padding: 5px;">          </td><td style="border: 1px solid #ccc; padding: 5px;"> 193..224 </td><td style="border: 1px solid #ccc; padding: 5px;"> 32 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 1793..2048 </td><td style="border: 1px solid #ccc; padding: 5px;"> 2048 </td><td style="border: 1px solid #ccc; padding: 5px;">        </td><td style="border: 1px solid #ccc; padding: 5px;"> 16385..20480 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4096 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 25..28 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4 </td><td style="border: 1px solid #ccc; padding: 5px;">          </td><td style="border: 1px solid #ccc; padding: 5px;"> 225..256 </td><td style="border: 1px solid #ccc; padding: 5px;"> 256 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 2049..2560 </td><td style="border: 1px solid #ccc; padding: 5px;"> 512 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 20481..24576 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8192 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 29..32 </td><td style="border: 1px solid #ccc; padding: 5px;"> 32 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 257..320 </td><td style="border: 1px solid #ccc; padding: 5px;"> 64 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 2561..3072 </td><td style="border: 1px solid #ccc; padding: 5px;"> 1024 </td><td style="border: 1px solid #ccc; padding: 5px;">        </td><td style="border: 1px solid #ccc; padding: 5px;"> 24577..28672 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4096 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 33..40 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8 </td><td style="border: 1px solid #ccc; padding: 5px;">          </td><td style="border: 1px solid #ccc; padding: 5px;"> 321..384 </td><td style="border: 1px solid #ccc; padding: 5px;"> 128 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 3073..3584 </td><td style="border: 1px solid #ccc; padding: 5px;"> 512 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 28673..32768 </td><td style="border: 1px solid #ccc; padding: 5px;"> 32768 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 41..48 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 385..448 </td><td style="border: 1px solid #ccc; padding: 5px;"> 64 </td><td style="border: 1px solid #ccc; padding: 5px;">            </td><td style="border: 1px solid #ccc; padding: 5px;"> 3585..4096 </td><td style="border: 1px solid #ccc; padding: 5px;"> 4096 </td><td style="border: 1px solid #ccc; padding: 5px;">        </td><td style="border: 1px solid #ccc; padding: 5px;"> 32769..40960 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8192 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 49..56 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8 </td><td style="border: 1px solid #ccc; padding: 5px;">          </td><td style="border: 1px solid #ccc; padding: 5px;"> 449..512 </td><td style="border: 1px solid #ccc; padding: 5px;"> 512 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 4097..5120 </td><td style="border: 1px solid #ccc; padding: 5px;"> 1024 </td><td style="border: 1px solid #ccc; padding: 5px;">        </td><td style="border: 1px solid #ccc; padding: 5px;"> 40961..49152 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16384 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 57..64 </td><td style="border: 1px solid #ccc; padding: 5px;"> 64 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 513..640 </td><td style="border: 1px solid #ccc; padding: 5px;"> 128 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 5121..6144 </td><td style="border: 1px solid #ccc; padding: 5px;"> 2048 </td><td style="border: 1px solid #ccc; padding: 5px;">        </td><td style="border: 1px solid #ccc; padding: 5px;"> 49153..57344 </td><td style="border: 1px solid #ccc; padding: 5px;"> 8192 </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 65..80 </td><td style="border: 1px solid #ccc; padding: 5px;"> 16 </td><td style="border: 1px solid #ccc; padding: 5px;">         </td><td style="border: 1px solid #ccc; padding: 5px;"> 641..768 </td><td style="border: 1px solid #ccc; padding: 5px;"> 256 </td><td style="border: 1px solid #ccc; padding: 5px;">           </td><td style="border: 1px solid #ccc; padding: 5px;"> 6145..7168 </td><td style="border: 1px solid #ccc; padding: 5px;"> 1024 </td></tr> </tbody></table><p></p><p>Блоки размером более 57344 байт выделяются напрямую у системы (фактически выделяемая память кратна размеру страницы (4Кб), но расход виртуальной памяти кратен 65536 байт). </p><h3><a name="6._Почему_большие_блоки_никак_не_кэш"></a>6. Почему большие блоки никак не кэшируются, а всегда запрашиваются напрямую у системы?<a href="#6._%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83_%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B8%D0%B5_%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8_%D0%BD%D0%B8%D0%BA%D0%B0%D0%BA_%D0%BD%D0%B5_%D0%BA%D1%8D%D1%88" class="section_anchor"></a></h3><p>Фактически, это не даст значительного повышения производительности для практических задач, т.к. простые тесты показывают, что выделение даже 64Кб напрямую через <tt>VirtualAlloc</tt> или mmap быстрее (в 2-15 раз в зависимости от системы), чем простое зануление выделенного блока памяти через memset (кроме первого раза, который занимает в 4-10 раз больше из-за необходимости размещения страниц в физической памяти системой при первом доступе к страницам). Но очевидно, для бОльших размеров накладные расходы на системный вызов и переход в ядро будут ещё менее заметны. Однако, если для вашего приложения это имеет значение, то просто увеличьте значение параметра CHUNK_SIZE до желаемого уровня (однако хочу заметить, что в реальных приложениях рост требуемых объемов памяти идёт больше на уровне <strong>количества</strong> выделяемых блоков, а не их размера (напр., был 1 млн. записей - стало 2 млн., аналогично при добавлении в структуру новых объектов типа std::string и пр.; в то время как напр. средняя длина самих строчек увеличивается значительно реже), т.о. текущие значения параметров можно считать одинаково подходящими как для пользовательских приложений, так и для серверных). </p><h1><a name="Использование"></a>Использование<a href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" class="section_anchor"></a></h1><p>Для подключения ltalloc к вашему C++ приложению достаточно просто добавить файл <a href="http://ltalloc.googlecode.com/hg/ltalloc.cc" rel="nofollow">ltalloc.cc</a> к списку исходных файлов проекта. В нём переопределяются глобальные операторы new и delete, что является полностью совместимым с С++ стандартом решением для замены практически всех аллокаций памяти в С++ приложениях (т.к. stl контейнеры по умолчанию используют глобальный оператор new). Но если этот способ не подходит для вашего приложения, то есть и другие варианты подключения. Фактически, исходный файл ltalloc.cc написан на C (и переопределение операторов new/delete отключается автоматически, если идентификатор <tt>__cplusplus</tt> не опередён), и т.о. он может быть скомпилирован как С, так и С++ компилятором. </p><h2><a name="GNU/Linux"></a>GNU/Linux<a href="#GNU/Linux" class="section_anchor"></a></h2><ol><li><tt>gcc /path/to/ltalloc.cc ...</tt> </li><li><tt>gcc ... /path/to/libltalloc.a</tt> </li><li><tt>LD_PRELOAD=/path/to/libltalloc.so &lt;appname&gt; [&lt;args...&gt;]</tt> </li></ol><p>Для использования вариантов 2 и 3 необходимо построить libltalloc: </p><pre class="prettyprint"><span class="pln">hg clone https</span><span class="pun">:</span><span class="com">//code.google.com/p/ltalloc/</span><span class="pln"><br>cd ltalloc</span><span class="pun">/</span><span class="pln">gnu</span><span class="pun">.</span><span class="pln">make</span><span class="pun">.</span><span class="pln">lib<br>make<br></span><span class="pun">(после</span><span class="pln"> </span><span class="pun">этого</span><span class="pln"> </span><span class="pun">файлы</span><span class="pln"> libltalloc</span><span class="pun">.</span><span class="pln">a </span><span class="pun">и</span><span class="pln"> libltalloc</span><span class="pun">.</span><span class="pln">so </span><span class="pun">будут</span><span class="pln"> </span><span class="pun">созданы</span><span class="pln"> </span><span class="pun">в</span><span class="pln"> </span><span class="pun">текущей</span><span class="pln"> </span><span class="pun">директории)</span></pre><p>И при использовании этих вариантов (2 или 3) все вызовы malloc/free (а также calloc, posix_memalign и т.д.) будут проходить через ltalloc.<br> Также необходимо заметить, что при использовании опций -flto и -O3 с вариантом 2 компилятор GCC не будет встраивать вызовы функций malloc/free, если не добавить также опции -fno-builtin-malloc и -fno-builtin-free (однако, это лишь незначительное замечание по производительности, и совсем не обязательно для корректной работы). </p><h2><a name="Windows"></a>Windows<a href="#Windows" class="section_anchor"></a></h2><p>К сожалению, под Windows не существует простого способа переопределения всех вызовов crt-функций malloc/free, и на данный момент есть только один простой способ замены практически всех аллокаций памяти в С++ приложениях - через перегрузку глобальных операторов new/delete (для этого, просто добавьте файл <a href="http://ltalloc.googlecode.com/hg/ltalloc.cc" rel="nofollow">ltalloc.cc</a> в ваш проект). </p><p>ltalloc был успешно собран компиляторами <tt>MSVC 2008/2010/2012, GCC 4.*, Intel Compiler 13, Clang 3.*</tt>, впрочем его исходный код очень простой, и может быть с лёгкостью портирован для компиляции любым другим компилятором C или C++ с поддержкой thread-local переменных. (Замечание: в некоторых сборках MinGW есть проблема с emutls и порядком вызова деструктора потока (все thread-local переменные удаляются до его вызова), и завершение любого потока может приводить к крашу.) </p>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ 
+ <div id="commentform">
+ <form action="https://code.google.com/p/ltalloc/w/detail.do" method="post">
+ <table>
+ <tbody><tr><td class="vt">
+ <input name="pagename" value="Main" type="hidden">
+ <input name="token" value="ABZ6GAdTkJ4jy03Q3fW6VvzVd1FbPFn3qA:1440156958578" type="hidden">
+ <div class="graytext" style="float: right;">
+ Hint: You can use <a href="http://code.google.com/p/support/wiki/WikiSyntax">Wiki Syntax.</a>
+ </div>
+ <div>Enter a comment:</div>
+ <textarea name="content" rows="6" cols="100"></textarea><br><br>
+ <input name="submit" value="Submit" type="submit">
+ </td>
+ </tr></tbody></table>
+ </form>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ <form name="delcom" action="https://code.google.com/p/ltalloc/w/delComment.do" method="POST">
+ <input name="sequence_num" value="" type="hidden">
+ <input name="create_time" value="" type="hidden">
+ <input name="mode" value="" type="hidden">
+ <input name="pagename" value="Main" type="hidden">
+ <input name="token" value="ABZ6GAdTkJ4jy03Q3fW6VvzVd1FbPFn3qA:1440156958578" type="hidden">
+ </form>
+
+
+ <script src="wiki_files/prettify.js"></script>
+ <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<script type="text/javascript" src="wiki_files/dit_scripts.js"></script>
+
+
+ <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="wiki_files/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="wiki_files/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="https://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="https://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ 
+
+
+
+<div style="display: none;" id="menuDiv-projects-dropdown" class="menuDiv instance0"><div class="menuCategory default"></div><b style="display: block;" class="categoryTitle projects">Projects</b><div class="menuCategory projects"><a href="https://code.google.com/p/ltalloc/" style="display: block;" class="menuItem">ltalloc</a><a href="https://code.google.com/p/s-3/" style="display: block;" class="menuItem">s-3</a></div><div class="menuCategory controls"><hr class="menuSeparator"><a href="https://code.google.com/hosting/" style="display: block;" class="menuItem">Find open source projects...</a><a href="https://code.google.com/hosting/createProject" style="display: block;" class="menuItem">Create a project...</a></div></div><div style="display: none;" id="menuDiv-multilogin-dropdown" class="menuDiv instance1"><div class="menuCategory default"><span style="display: block;" class="menuText"><b>alextretyak2@gmail.com</b></span></div><div class="menuCategory controls"><hr class="menuSeparator"><a href="http://www.google.com/accounts/AddSession?service=code&amp;continue=https%3A%2F%2Fcode.google.com%2Fp%2Fltalloc%2Fwiki%2FMain%3Fwl%3Dru" style="display: block;" class="menuItem"><nobr>Sign in with another account...</nobr></a></div></div></body></html>

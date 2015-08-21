@@ -1,0 +1,38 @@
+/* Effective stylesheet produced by snapshot save */
+#wikipage { background: rgb(248, 248, 248) none repeat scroll 0% 0%; padding-bottom: 10px; }
+#wikipage #wikimaincol { border: 1px solid rgb(204, 204, 204); }
+#wikimaincol { padding: 5px 25px 10px 10px; background-color: rgb(255, 255, 255); min-width: 64em; }
+#wikiheader { padding-top: 10px; margin-bottom: 12px; }
+#wikicontent h1, #wikicontent h2, #wikicontent h3, #wikipreview h1, #wikipreview h2, #wikipreview h3 { background: transparent none repeat scroll 0% 0%; border: 0px none; padding-left: 0px; max-width: 700px; }
+#wikicontent h3, #wikipreview h3 { margin: 0px; }
+#wikicontent ul, #wikipreview ul, #wikicontent ol, #wikipreview ol { padding-left: 25px; max-width: 62em; }
+#wikicontent li, #wikipreview li { margin-bottom: 0.3em; }
+#wikicontent p, #wikipreview p { line-height: 1.25em; max-width: 64em; }
+#wikicontent img, #wikipreview img { max-width: 100%; }
+#wikiauthor { clear: both; text-align: right; font-size: x-small; }
+.wikitable { border-spacing: 0px; border: 1px solid rgb(204, 204, 204); }
+a.section_anchor::before { content: "¶"; }
+a.section_anchor { display: none; text-decoration: none; margin-left: 0.7em; font-weight: lighter; font-size: 85%; }
+h1:hover a.section_anchor, h2:hover a.section_anchor, h3:hover a.section_anchor, h4:hover a.section_anchor, h5:hover a.section_anchor, h6:hover a.section_anchor { display: inline; color: rgb(187, 187, 187); }
+h1 a.section_anchor:hover, h2 a.section_anchor:hover, h3 a.section_anchor:hover, h4 a.section_anchor:hover, h5 a.section_anchor:hover, h6 a.section_anchor:hover { color: rgb(51, 51, 204); }
+#wikicontent code, tt, #wikicontent pre, #wikipreview code, tt, #wikipreview pre { font-family: Monaco,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Lucida Console",monospace; font-size: 93%; max-width: 66em; }
+pre.prettyprint { padding: 0.5em; overflow: auto; font-family: Monaco,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Lucida Console",monospace; font-size: 93%; }
+#wikicontent pre.prettyprint, #wikipreview pre.prettyprint { background-color: rgb(238, 238, 238); max-width: 70em; }
+#wikicontent blockquote, #wikipreview blockquote { max-width: 60em; }
+blockquote { margin: 20px; }
+.prettyprint .str { color: rgb(0, 136, 0); }
+.prettyprint .kwd { color: rgb(0, 0, 136); }
+.prettyprint .com { color: rgb(136, 0, 0); }
+.prettyprint .typ { color: rgb(102, 0, 102); }
+.prettyprint .lit { color: rgb(0, 102, 102); }
+.prettyprint .pun { color: rgb(102, 102, 0); }
+.prettyprint .pln { color: rgb(0, 0, 0); }
+@media print {
+  .prettyprint .str { color: rgb(0, 102, 0); }
+  .prettyprint .kwd { color: rgb(0, 0, 102); font-weight: bold; }
+  .prettyprint .com { color: rgb(102, 0, 0); font-style: italic; }
+  .prettyprint .typ { color: rgb(68, 0, 68); font-weight: bold; }
+  .prettyprint .lit { color: rgb(0, 68, 68); }
+  .prettyprint .pun { color: rgb(68, 68, 0); }
+  .prettyprint .pln { color: rgb(0, 0, 0); }
+}
