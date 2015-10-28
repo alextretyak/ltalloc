@@ -61,7 +61,7 @@ int posix_memalign(void **memptr, size_t alignment, size_t size)
 	if ((alignment % sizeof(void*)) || (alignment & (alignment-1)) || alignment == 0)
 		return EINVAL;
 	void *ptr = memalign(alignment, size);
-    if (!ptr)
+	if (!ptr)
 		return ENOMEM;
 	*memptr = ptr;
 	return 0;

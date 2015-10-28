@@ -321,7 +321,7 @@ extern CPPCODE("C") const PIMAGE_TLS_CALLBACK p_thread_callback_ltalloc = on_tls
 typedef struct FreeBlock
 {
 	struct FreeBlock *next,
-					 *nextBatch;//in the central cache blocks are organized into batches to allow fast moving blocks from thread cache and back
+	                 *nextBatch;//in the central cache blocks are organized into batches to allow fast moving blocks from thread cache and back
 } FreeBlock;
 
 typedef struct alignas(CACHE_LINE_SIZE) ChunkBase//force sizeof(Chunk) = cache line size to avoid false sharing
@@ -664,11 +664,11 @@ static NOINLINE void move_to_central_cache(ThreadCache *tc, unsigned int sizeCla
 		add_batch_to_central_cache(cc, sizeClass, tc->tempList);
 		SPINLOCK_RELEASE(&cc->lock);
 	}
-// 	else if (unlikely(!tc->freeList))//this is a first call (i.e. when counter = 0) - just initialization of counter needed
-// 	{
-// 		tc->counter--;
-// 		return;
-// 	}
+//	else if (unlikely(!tc->freeList))//this is a first call (i.e. when counter = 0) - just initialization of counter needed
+//	{
+//		tc->counter--;
+//		return;
+//	}
 
 	tc->tempList = tc->freeList;
 	tc->freeList = NULL;
