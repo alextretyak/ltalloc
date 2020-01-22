@@ -385,7 +385,7 @@ static CPPCODE(inline) unsigned int get_size_class(size_t size)
 
 	size = (size + (sizeof(void*)-1)) & ~(sizeof(void*)-1);//minimum block size is sizeof(void*), doing this is better than just "size = max(size, sizeof(void*))"
 
-	BSR(index, (size-1)|1);//"|1" needed because result of BSR is undefined for zero input
+	BSR(index, (size-1)/*|1*/);//`|1` is not needed because `size` can not be equal to 1
 #if LTALLOC_SIZE_CLASSES_SUBPOWER_OF_TWO == 0
 	return index;
 #else
