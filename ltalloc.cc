@@ -730,14 +730,20 @@ static void release_thread_cache(void *p)
 					tail = tail->next, freeListSize++;
 
 			SPINLOCK_ACQUIRE(&cc->lock);
-			if (tc->tempList)
+			if (tc->tempList) {
 				add_batch_to_central_cache(cc, sizeClass, tc->tempList);
+				tc->tempList = NULL;
+			}
 			if (tc->freeList) {//append tc->freeList to cc->freeList
 				tail->next = cc->freeList;
 				cc->freeList = tc->freeList;
 				assert(freeListSize == batch_size(sizeClass)+1 - tc->counter);
 				cc->freeListSize += freeListSize;
+				tc->freeList = NULL;
+				tc->counter = 0;
 			}
+			else
+				assert(tc->counter == 0);
 			SPINLOCK_RELEASE(&cc->lock);
 		}
 	}
@@ -745,6 +751,9 @@ static void release_thread_cache(void *p)
 
 void ltalloc_squeeze(size_t padsz)
 {
+	if (padsz == 0)
+		release_thread_cache(NULL);
+
 	unsigned int sizeClass = get_size_class(2*sizeof(void*));//skip small chunks because corresponding batches can not be efficiently detached from the central cache (if that becomes relevant, may be it worths to reimplement batches for small chunks from array to linked lists)
 	for (;sizeClass < NUMBER_OF_SIZE_CLASSES; sizeClass++)
 	{
